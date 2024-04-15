@@ -1,16 +1,19 @@
 ﻿using GeodataService.Models;
 using Dadata;
 using System.Text;
+using GeodataService.Services.Interfaces;
+using Newtonsoft.Json.Linq;
 
 namespace GeodataService.Services.ReverseGeocoding
 {
     public class DadataReverseGeocodingService : IReverseGeocodingService
     {
-        private const string Token = "f1937324cd962dcae2609869b3f9692e67a18ac2";
+        private readonly string? _token;
         private readonly ILogger<DadataReverseGeocodingService> _logger;
 
-        public DadataReverseGeocodingService(ILogger<DadataReverseGeocodingService> logger)
+        public DadataReverseGeocodingService(IConfiguration configuration, ILogger<DadataReverseGeocodingService> logger)
         {
+            _token = configuration["DadataSettings:Token"];
             _logger = logger;
         }
 
@@ -32,7 +35,7 @@ namespace GeodataService.Services.ReverseGeocoding
         private async Task<List<ReverseGeocodingAddress>> GetAddressesAsync(double latitude, double longitude)
         {
             var addresses = new List<ReverseGeocodingAddress>();
-            var api = new SuggestClientAsync(Token);
+            var api = new SuggestClientAsync(_token);
             var result = await api.Geolocate(lat: latitude, lon: longitude);
 
             foreach (var address in result.suggestions)

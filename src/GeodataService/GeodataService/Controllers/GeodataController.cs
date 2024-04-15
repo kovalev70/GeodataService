@@ -1,6 +1,5 @@
 ﻿using GeodataService.Models;
-using GeodataService.Services.Geocoding;
-using GeodataService.Services.ReverseGeocoding;
+using GeodataService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeodataService.Controllers

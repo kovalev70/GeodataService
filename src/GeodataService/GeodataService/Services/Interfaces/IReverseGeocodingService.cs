@@ -1,6 +1,6 @@
 ﻿using GeodataService.Models;
 
-namespace GeodataService.Services.ReverseGeocoding
+namespace GeodataService.Services.Interfaces
 {
     public interface IReverseGeocodingService
     {

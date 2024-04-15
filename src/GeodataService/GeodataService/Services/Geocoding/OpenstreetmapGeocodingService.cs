@@ -1,4 +1,5 @@
 ﻿using GeodataService.Models;
+using GeodataService.Services.Interfaces;
 using System.Text.Json;
 
 namespace GeodataService.Services.Geocoding

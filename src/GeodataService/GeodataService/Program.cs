@@ -1,4 +1,5 @@
 using GeodataService.Services.Geocoding;
+using GeodataService.Services.Interfaces;
 using GeodataService.Services.ReverseGeocoding;
 
 var builder = WebApplication.CreateBuilder(args);

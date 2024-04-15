@@ -1,6 +1,6 @@
 ﻿using GeodataService.Models;
 
-namespace GeodataService.Services.Geocoding
+namespace GeodataService.Services.Interfaces
 {
     public interface IGeocodingService
     {
